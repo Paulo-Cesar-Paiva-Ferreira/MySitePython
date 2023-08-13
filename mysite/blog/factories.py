@@ -29,6 +29,7 @@ class UserFactory(factory.django.DjangoModelFactory):
 
 class PostFactory(factory.django.DjangoModelFactory):
     title = factory.LazyAttribute(lambda x: faker.sentence())
+    content = factory.LazyAttribute(lambda x: faker.sentence())
     created_on = factory.LazyAttribute(lambda x: now())
     author = factory.SubFactory(UserFactory)
     status = 0
